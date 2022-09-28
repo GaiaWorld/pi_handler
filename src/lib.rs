@@ -7,6 +7,7 @@ use std::any::Any;
 use std::sync::Arc;
 use std::collections::HashMap;
 
+use futures::future::LocalBoxFuture;
 use fnv::FnvHashMap;
 
 use pi_atom::Atom;
@@ -46,7 +47,7 @@ pub trait Handler: Send + Sync {
     type HandleResult;
 
     //处理方法
-    fn handle(&self, env: Arc<dyn GrayVersion>, func: Atom, args: Args<Self::A, Self::B, Self::C, Self::D, Self::E, Self::F, Self::G, Self::H>) -> Self::HandleResult;
+    fn handle(&self, env: Arc<dyn GrayVersion>, func: Atom, args: Args<Self::A, Self::B, Self::C, Self::D, Self::E, Self::F, Self::G, Self::H>) -> LocalBoxFuture<'static, Self::HandleResult>;
 }
 
 /*
