@@ -1,6 +1,6 @@
 [package]
 name = "pi_handler"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["zuon<zuon@yinengyun.com>"]
 edition = "2018"
 description = "A universal handler utils"
@@ -11,5 +11,5 @@ keywords = ["pi", "handler"]
 [dependencies]
 futures = "0.3"
 pi_gray = "0.1"
-pi_atom = "0.1"
+pi_atom = "0.2"
 fnv = "1.0.6"
